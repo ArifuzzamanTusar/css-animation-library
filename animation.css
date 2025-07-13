@@ -1,0 +1,373 @@
+/*
+ * =========================================
+ * CSS Animation Library - Looping Edition
+ * =========================================
+ * A collection of ready-to-use looping CSS animations.
+ *
+ * How to use:
+ * 1. Add this stylesheet to your project.
+ * 2. Add the desired animation class to an HTML element.
+ * All animations in this library loop by default.
+ * Example: <div class="spin">...</div>
+ *
+ * --- AVAILABLE ANIMATIONS ---
+ *
+ * [ Movement ]
+ * .float-y         (formerly .float)
+ * .float-x
+ * .float-top-left
+ * .float-top-right
+ * .float-bottom-left
+ * .float-bottom-right
+ * .patrol-x
+ * .orbit
+ *
+ * [ Rotation ]
+ * .spin
+ * .rocking
+ *
+ * [ Emphasis & Attention ]
+ * .breathing
+ * .wiggle
+ * .jello
+ * .vibrate
+ * .heartbeat
+ * .blink
+ *
+ * [ Glows, Colors & Fills ]
+ * .pulse-glow
+ * .color-change
+ * .glow-border
+ * .text-shadow-glow
+ * .gradient-shift
+ *
+ * [ Skew & Distort ]
+ * .skew-x
+ * .skew-y
+ *
+ * =========================================
+ */
+
+/* --- Movement Animations --- */
+
+/**
+ * .float-y
+ * Makes an element gently float up and down.
+ */
+@keyframes float-y-animation {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+.float-y {
+  animation: float-y-animation 4s ease-in-out infinite;
+}
+
+/**
+ * .float-x
+ * Makes an element gently float left and right.
+ */
+@keyframes float-x-animation {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(-15px); }
+}
+.float-x {
+  animation: float-x-animation 4s ease-in-out infinite;
+}
+
+/**
+ * .float-top-left
+ * Floats diagonally towards the top-left.
+ */
+@keyframes float-top-left-animation {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, -10px); }
+}
+.float-top-left {
+  animation: float-top-left-animation 3s ease-in-out infinite;
+}
+
+/**
+ * .float-top-right
+ * Floats diagonally towards the top-right.
+ */
+@keyframes float-top-right-animation {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -10px); }
+}
+.float-top-right {
+  animation: float-top-right-animation 3s ease-in-out infinite;
+}
+
+/**
+ * .float-bottom-left
+ * Floats diagonally towards the bottom-left.
+ */
+@keyframes float-bottom-left-animation {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, 10px); }
+}
+.float-bottom-left {
+  animation: float-bottom-left-animation 3s ease-in-out infinite;
+}
+
+/**
+ * .float-bottom-right
+ * Floats diagonally towards the bottom-right.
+ */
+@keyframes float-bottom-right-animation {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(10px, 10px); }
+}
+.float-bottom-right {
+  animation: float-bottom-right-animation 3s ease-in-out infinite;
+}
+
+/**
+ * .patrol-x
+ * Moves an element back and forth horizontally across its container.
+ * Note: Requires the element's container to have position: relative.
+ */
+@keyframes patrol-x-animation {
+  0%, 100% { left: 0; transform: translateX(0%); }
+  50% { left: 100%; transform: translateX(-100%); }
+}
+.patrol-x {
+  position: absolute;
+  animation: patrol-x-animation 10s linear infinite;
+}
+
+/**
+ * .orbit
+ * Rotates an element in a circular path.
+ */
+@keyframes orbit-animation {
+  from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+}
+.orbit {
+  animation: orbit-animation 5s linear infinite;
+}
+
+
+/* --- Rotation Animations --- */
+
+/**
+ * .spin
+ * Rotates an element 360 degrees.
+ */
+@keyframes spin-animation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin {
+  animation: spin-animation 2s linear infinite;
+}
+
+/**
+ * .rocking
+ * Rotates an element back and forth like a pendulum.
+ */
+@keyframes rocking-animation {
+  0%, 100% { transform: rotate(15deg); }
+  50% { transform: rotate(-15deg); }
+}
+.rocking {
+  transform-origin: bottom center;
+  animation: rocking-animation 2.5s ease-in-out infinite;
+}
+
+
+/* --- Emphasis & Attention Animations --- */
+
+/**
+ * .breathing
+ * A slow, calm scaling effect.
+ */
+@keyframes breathing-animation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.breathing {
+  animation: breathing-animation 3s ease-in-out infinite;
+}
+
+/**
+ * .wiggle
+ * A quick, slight side-to-side rotation.
+ */
+@keyframes wiggle-animation {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.wiggle {
+  animation: wiggle-animation 0.8s ease-in-out infinite;
+}
+
+/**
+ * .jello
+ * A wobbly, jelly-like shake.
+ */
+@keyframes jello-animation {
+  11.1%, 100% { transform: none; }
+  22.2% { transform: skewX(-12.5deg) skewY(-12.5deg); }
+  33.3% { transform: skewX(6.25deg) skewY(6.25deg); }
+  44.4% { transform: skewX(-3.125deg) skewY(-3.125deg); }
+  55.5% { transform: skewX(1.5625deg) skewY(1.5625deg); }
+  66.6% { transform: skewX(-0.78125deg) skewY(-0.78125deg); }
+  77.7% { transform: skewX(0.390625deg) skewY(0.390625deg); }
+  88.8% { transform: skewX(-0.1953125deg) skewY(-0.1953125deg); }
+}
+.jello {
+  animation: jello-animation 2s infinite;
+  transform-origin: center;
+}
+
+/**
+ * .vibrate
+ * A very subtle, high-frequency shake.
+ */
+@keyframes vibrate-animation {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+.vibrate {
+  animation: vibrate-animation 0.2s linear infinite;
+}
+
+/**
+ * .heartbeat
+ * A fast, intense pulse, like a heartbeat.
+ */
+@keyframes heartbeat-animation {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.15); }
+  70% { transform: scale(1); }
+}
+.heartbeat {
+  animation: heartbeat-animation 1.5s ease-out infinite;
+}
+
+/**
+ * .blink
+ * Fades an element in and out.
+ */
+@keyframes blink-animation {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.blink {
+  animation: blink-animation 1.5s linear infinite;
+}
+
+
+/* --- Glows, Colors & Fills --- */
+
+/**
+ * .pulse-glow
+ * Pulses the element with a soft shadow.
+ */
+@keyframes pulse-glow-animation {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(94, 23, 235, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 10px rgba(94, 23, 235, 0);
+  }
+}
+.pulse-glow {
+  animation: pulse-glow-animation 2s ease-out infinite;
+  border-radius: inherit;
+}
+
+/**
+ * .color-change
+ * Cycles through brand colors for background-color.
+ */
+@keyframes color-change-animation {
+  0% { background-color: #5e17eb; } /* MS Purple */
+  33% { background-color: #AFFF33; } /* MS Lime */
+  66% { background-color: #D4AF37; } /* MS Gold */
+  100% { background-color: #5e17eb; } /* MS Purple */
+}
+.color-change {
+  animation: color-change-animation 5s linear infinite;
+}
+
+/**
+ * .glow-border
+ * Animates the color of the element's border.
+ */
+@keyframes glow-border-animation {
+  0% { border-color: #5e17eb; }
+  33% { border-color: #AFFF33; }
+  66% { border-color: #ef2a2a; } /* MS Red */
+  100% { border-color: #5e17eb; }
+}
+.glow-border {
+  border-width: 3px;
+  border-style: solid;
+  animation: glow-border-animation 4s linear infinite;
+}
+
+/**
+ * .text-shadow-glow
+ * Adds a glowing, pulsing shadow to text.
+ */
+@keyframes text-shadow-glow-animation {
+  0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #5e17eb; }
+  50% { text-shadow: 0 0 10px #fff, 0 0 20px #5e17eb, 0 0 30px #5e17eb; }
+}
+.text-shadow-glow {
+  animation: text-shadow-glow-animation 2.5s ease-in-out infinite;
+}
+
+/**
+ * .gradient-shift
+ * Animates the position of a background gradient.
+ */
+@keyframes gradient-shift-animation {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+.gradient-shift {
+  background: linear-gradient(-45deg, #5e17eb, #ef2a2a, #AFFF33, #005B5D);
+	background-size: 400% 400%;
+	animation: gradient-shift-animation 15s ease infinite;
+}
+
+
+/* --- Skew & Distort --- */
+
+/**
+ * .skew-x
+ * Skews an element back and forth on the X-axis.
+ */
+@keyframes skew-x-animation {
+  0%, 100% { transform: skewX(20deg); }
+  50% { transform: skewX(-20deg); }
+}
+.skew-x {
+  animation: skew-x-animation 3s ease-in-out infinite;
+}
+
+/**
+ * .skew-y
+ * Skews an element back and forth on the Y-axis.
+ */
+@keyframes skew-y-animation {
+  0%, 100% { transform: skewY(10deg); }
+  50% { transform: skewY(-10deg); }
+}
+.skew-y {
+  animation: skew-y-animation 3s ease-in-out infinite;
+}
